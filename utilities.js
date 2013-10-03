@@ -1,23 +1,9 @@
-//Iterate through the object:
-for i in calendar: 
-	find date 
-		date.each:
-		find all associated appointments
 
 
 
-loop through dateList, once i = key in calendar object:
-	grab appointments and display on page under date.
 
-
-//add to row.
-function to add given appts to page (from object, to page)
-
-//Generate an inline form to take appt input:
-$(button).on("click", function() {
-	use modal/popup/lightbox to take input
-	call function to take input for new appt
-})
+			//create new row for list of appointments for current date
+			"<tr><td class='appts'>" + objectAppts + "</td><td></td></tr>")
 
 
 Function to take input for new appt:
@@ -43,11 +29,7 @@ function header() {
 	create the table wth the "APPT" header
 }
 
-//Function to add dates to table
-function addDates() {
-	add each date to new row
-	add a blank row after each row date for the appts
-}
+
 
 //Funtion to add appts
 function addAppts() {
