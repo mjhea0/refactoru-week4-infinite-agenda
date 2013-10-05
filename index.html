@@ -2,34 +2,33 @@
 <html>
   <head>
     <title>Infinite Agenda</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.4.6/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.4.6/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   </head>
   <body>
-  	<div class="container">
-    	<div class="row">
+    <div class="container">
+      <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <h1>Agenda</h1>
-            <table class="table table-hover" id="myTable">
-            <tbody id="dates">
-            </tbody>
-          </table>
+          <div class="calendarList"></div>
         </div>
-      <div>
+      </div>
     </div>
-    <div class="calendarList"></div>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="jstorage.js"></script>
-    <script src="main.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.4.6/jquery-editable/js/jquery-editable-poshytip.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="js/creatable.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/main.js"></script>
   
   </body>
 
   </html>
-
