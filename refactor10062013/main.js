@@ -3,9 +3,41 @@ $(document).ready(function(){
 	// Globals
 	var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	var weekday = 0;
+	var count = 0
 
+	function createDay() {
+		var currentDate = new Date
+		var newDate = new Date(currentDate)
+		newDate.setDate(newDate.getDate() + count)
+		var dayOfWeek = new Date(newDate)
+		count++
+		calendarDay = dayOfWeek.toString()
+		return calendarDay.slice(3,15)
+	};
 
-	// edit in place
+	//* Calculate the first week */
+	function firstWeek (weekArray) {
+		var listAgenda = $('<ul class="week"></ul>')
+		for(var i=(new Date().getDay()); i < 7; i++) {
+			var item = $('<li></li>');
+			listAgenda.append(item);
+		}
+		$('.agenda').append(listAgenda);
+	};
+
+	//** Generate weeks */
+	function allWeeks(weekArray){
+	var listAgenda = $('<ul class="week"></ul>')
+		for(var i=0; i < weekArray.length; i++) {
+			var week = createDay(weekArray[i]);
+			var item = $('<li></li>');
+			item.append(week);
+			listAgenda.append(item);
+		}
+		$('.agenda').append(listAgenda);
+	};
+
+	//** edit in place */
 	function editApt() {
     var divHtml = $(this).html();
     var editableText = $("<textarea class='col-md-8'>");
@@ -25,6 +57,8 @@ $(document).ready(function(){
 	
   $(".appointment").click(editApt);
 
+  //** infinite scroll */
+  function infiniteScroll() {
 	$(window).scroll(function() { 
 		if  ($(window).scrollTop()+250 >= ($(document).height() - ($(window).height()))){
 
@@ -48,6 +82,11 @@ $(document).ready(function(){
 	}
 
 	});
-		
+	}
+
+	//** run */
+	firstWeek(weekDays);
+	allWeeks(weekDays);
+	infiniteScroll()	
 
 });
