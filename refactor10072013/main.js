@@ -3,7 +3,7 @@ $(document).ready(function(){
 	// Globals
 	var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	var weekday = 0;
-	var count = 1
+	var count = 8;
 
 	function createDay() {
 		var currentDate = new Date
