@@ -4,27 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.4.6/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="edit.js"></script>
+  <script src="main.js"></script>
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
   <title>Infinite Agenda</title>
-  <style type="text/css">
-    .container {max-width:600px; padding:10px;}
-    #calendar { width:95%; border-spacing:.5px;}
-    #calendar th,td{ width: 10%; height:70px; vertical-align:top; padding:3px;}
-    #calendar td{border:1px solid black;}
-    #calendar td:hover {background: #2C3E50; color: white;}
-    #calendar th {vertical-align:bottom; text-align:center;}
-    #loader {margin-left: auto; margin-right: auto; display: block; margin-top: 2em;
-      margin-bottom: 2em; }
-    .other-month { background: #BDC3C7; }
-    .today { background: #E74C3C; }
-  </style>
 </head>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $(".editable")
+          .inplace({
+              event:'editEvent',
+              key: 'cmd',
+              class: 'rollover'
+          })
+          .on('editEvent', function(e){
+              console.log('trigger event: save content for example');
+          });
+  });
+  </script>
   <body>
   <div class="container">
     <div class="row">
         <center>
           <h1>Infinite Agenda</h1>
-          <p>This could take a while.</p>
+          <h4>This could take a while.</h4>
           <table id="calendar">
             <tr>
               <th>Sun</th>
@@ -39,10 +46,6 @@
         </center>
     </div>
   </div>
-
-  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script src="main.js"></script>
 
 </body>
 </html>
